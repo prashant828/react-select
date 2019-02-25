@@ -1,0 +1,55 @@
+.selected{
+    display: inline-block;
+    background: yellow;
+    min-width: 0px;
+    margin: 5px;
+    border-radius: 3px
+}
+
+.spanOne{
+    margin-right: 4px;
+    padding: 5px
+}
+
+.spanTwo{
+    padding: 0 3px
+}
+
+.spanTwo:hover{
+    background: blue;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer
+}
+
+.input{
+    border: none;
+    width: 70px
+}
+.input:focus{
+    outline: none
+ }
+
+.suggestionBox{
+    width: 49%;
+    margin: auto;
+    padding: 5px;
+    text-align: center;
+    background: white;
+    border-radius: 5px;
+}
+
+.inputDiv{
+    width: 50%;
+    margin: auto;
+    background: white;
+    border-radius: 5px;
+    border: 1px solid rgb(161, 159, 159);
+    min-height: 30px
+}
+
+.option{
+    padding: 5px;
+    background: #eeeeee;
+    margin: 5px;
+    cursor: pointer
+}

@@ -55,17 +55,21 @@ class reactSelect extends Component {
         this.setState({
             values: val,
             options: optns,
-        }, () => console.log('select', this.state.values));
+        });
         this.inputFocus.current.focus();
     }
 
     handleDelete(selection) {
         let val = [...this.state.values];
         let optns = [...this.state.options];
+        for(let i = 0; i<optns.length; i++){
+            if(optns[i]===selection){
+                optns.splice(i, 1)
+            }
+        }
         optns.push(selection);
         let valIndex = val.findIndex(val => selection === val);
         val.splice(valIndex, 1);
-        this.checkSelected(val)
         this.setState({
             values: val,
             options: optns
@@ -84,6 +88,7 @@ class reactSelect extends Component {
         let updateOptions = [];
         for (let i = 0; i < found.length; i++) {
             if (found[i]) {
+                
                 updateOptions.push(found[i].input)
             }
         }
@@ -106,7 +111,8 @@ class reactSelect extends Component {
                     inputFocus={this.inputFocus}
                     click={this.handleFocus}
                     change={this.handleInputChange}
-                    inputValue={this.state.inputValue} />
+                    inputValue={this.state.inputValue}
+                />
                 {suggestion}
             </div>
 
